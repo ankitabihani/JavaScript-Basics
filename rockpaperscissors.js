@@ -1,12 +1,18 @@
-//Simple RockPaperScissors game
+//Simple Rock Paper Scissors
 var userChoice = prompt("Do you choose rock, paper or scissors?");
+if (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors")
+{
+userChoice = prompt("Please enter a valid choice.Do you choose rock, paper or scissors?");   
+}
+if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors")
+{
 var computerChoice = Math.random();
 if (computerChoice < 0.34) {
-	computerChoice = "rock";
+    computerChoice = "rock";
 } else if(computerChoice <= 0.67) {
-	computerChoice = "paper";
+    computerChoice = "paper";
 } else {
-	computerChoice = "scissors";
+    computerChoice = "scissors";
 } console.log("Computer: " + computerChoice);
 
 var compare = function(choice1, choice2)
@@ -45,3 +51,5 @@ var compare = function(choice1, choice2)
 
 }
 compare(userChoice,computerChoice);
+}
+
